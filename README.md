@@ -9,9 +9,9 @@ Include a `<birthday>` tag like the following:
     showage="true"
 />
 ```
-Then, at the end of your file, include the following : 
+Download birthday.js [here](https://raw.githubusercontent.com/LinUwUxCat/birthday.js/main/birthday.js) and put it next to your HTML file, then at the end of said file, include the following : 
 ```html
-<script src="https://raw.githubusercontent.com/LinUwUxCat/birthday.js/main/birthday.js"></script>
+<script src="birthday.js"></script>
 ```
 ## Attributes
 In addition to the above example, a few different attributes exist. Here is the complete list:
@@ -25,9 +25,11 @@ In addition to the above example, a few different attributes exist. Here is the 
 | customyeartext | Text to show next to the years of age | `years` | This will have no effect if `showage` is false | |
 | custommonthtext | Text to show next to the months of age | `month` | This will have no effect if `showagemonths` is false | |
 | customseptext | Text to show between the years and months | `and` | This will have no effect if `showagemonths` is false | |
+| bdayfunction | The name of a function that will be executed on the birthday. | `myBdayFunction` | This function must be in the `window` scope (see example below) | |
+
 
 ## Example
-Here is an example using all attributes:
+Here is an example using custom text attributes:
 ```html
  <birthday 
     year="2004" 
@@ -39,4 +41,26 @@ Here is an example using all attributes:
     custommonthtext=" months"
     customseptext=" and "
 />
+```
+And here is an example of a custom function, paired with [tsParticles](https://github.com/matteobruni/tsparticles). This will make confetti appear on october 7.
+```html
+<birthday 
+    year="2004" 
+    month="october" 
+    day="7" 
+    showage="true" 
+    customyeartext="yo"
+    bdayfunction="myBdayFunction"
+/>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.10.1/tsparticles.confetti.bundle.min.js"></script>
+<script>
+    function myBdayFunction(){
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+        });
+    }
+</script>
+<script src="birthday.js"></script>
 ```

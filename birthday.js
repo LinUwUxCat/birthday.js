@@ -75,4 +75,7 @@ bday_elts.forEach(elt => {
             elt.textContent += customSepText + mDiff + customMonthText
         }
     }
+
+    let bdayFunction = elt.getAttribute("bdayfunction");
+    if (bdayFunction!=null && dob.getDate()==now.getDate() && dob.getMonth()==now.getMonth()) window[bdayFunction]()
 });
