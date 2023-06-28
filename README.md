@@ -9,9 +9,9 @@ Include a `<birthday>` tag like the following:
     showage="true"
 />
 ```
-Download birthday.js [here](https://raw.githubusercontent.com/LinUwUxCat/birthday.js/main/birthday.js) and put it next to your HTML file, then at the end of said file, include the following : 
+Include the following at the end of your HTML file : 
 ```html
-<script src="birthday.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/LinUwUxCat/birthday.js@main/birthday.js"></script>
 ```
 ## Attributes
 In addition to the above example, a few different attributes exist. Here is the complete list:
