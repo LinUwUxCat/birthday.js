@@ -49,7 +49,6 @@ bday_elts.forEach(elt => {
     }
     let dob = new Date(Number(year), Number(isNaN(month)?monthFromString(month):Number(month))-1, Number(day))
     let now = new Date(Date.now())
-    
     let showAgeTxt = elt.getAttribute("showage")
     let showAge = (showAgeTxt === "true" || showAgeTxt === "1")
     let showAgeMonthsTxt = elt.getAttribute("showagemonths")
